@@ -1,0 +1,1 @@
+# Auto-instalador-informux.py
