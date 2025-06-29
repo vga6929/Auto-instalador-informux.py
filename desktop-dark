@@ -1,6 +1,17 @@
 #!/bin/bash
 
-am start -n com.termux.x11/.MainActivity
-termux-x11 :1 &
-Xwayland :1 & sleep 1 && export DISPLAY=:1 && xfce4-session
-
+while true
+do
+  am start -n com.termux.x11/.MainActivity &
+  termux-x11 :1 &
+  Xwayland :1 &
+  sleep 1
+  export DISPLAY=:1
+  xfce4-session
+  if [ $? -eq 0 ]; then
+    break
+  else
+    echo "Error al ejecutar los comandos. Reintentando..."
+    sleep 2
+  fi
+done
