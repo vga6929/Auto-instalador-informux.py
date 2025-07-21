@@ -18,8 +18,9 @@ for line in logo.splitlines():
 opcion1 = pyfiglet.figlet_format("metasploit . . . 1")
 opcion2 = pyfiglet.figlet_format("i-haklab . . . 2")
 opcion3 = pyfiglet.figlet_format("DESKTOP . . . 3")
-opcion4 = pyfiglet.figlet_format("EXIT . . . 4")
-print(opcion1,opcion2,opcion3,opcion4)
+opcion4 = pyfiglet.figlet_format("KALI . . . 4")
+opcion5 = pyfiglet.figlet_format("EXIT . . . 5")
+print(opcion1,opcion2,opcion3,opcion4,opcion5)
 
 usuario = input("elige una opcion: ")
 if usuario == '1':
@@ -62,6 +63,12 @@ apt update')
              os.system('bash script2.sh')
              print("\033[91mEjecuta 'desktop-dark'\033[0m")
 elif usuario == '4':
+             os.system('cls' if os.name == 'nt' else 'clear')
+             kali = pyfiglet.figlet_format("DESCARGANDO INSTALADOR")
+             print(kali)
+             os.system('yes | apt update && yes | apt upgrade && pkg install wget -y && wget -O install-nethunter-termux https://offs.ec/2MceZWr && bash install-nethunter-termux')
+
+elif usuario == '5':
              sys.exit()
 else:
     negacion = pyfiglet.figlet_format("opcion incorrecta")
