@@ -62,7 +62,7 @@ apt update')
              os.system('bash script2.sh')
              print("\033[91mEjecuta 'desktop-dark'\033[0m")
 elif usuario == '4':
-             sys.exyt()
+             sys.exit()
 else:
     negacion = pyfiglet.figlet_format("opcion incorrecta")
     print(negacion)
